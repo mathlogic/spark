@@ -1,4 +1,4 @@
-# Data Scientist tool kit for Spark
+# Data Science tool kit for Spark
 
 A library for handy functions that are typically required for any Data Science project using spark
 
