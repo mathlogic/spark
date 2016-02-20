@@ -41,4 +41,14 @@ LabeledPoint(row.toSeq(x1).toString.toDouble,Vectors.dense(row.toSeq.toArray.fil
 }
 return x2
   }
+
+   def df2LabeledPointMap (indf: org.apache.spark.sql.DataFrame, targetvar: String ) : Array[String] = {
+var i = -1
+val x1 = indf.columns.indexOf(targetvar)
+val x2 = indf.columns.filter{ _ => i = i+1; i != x1 }
+return x2
+  }
+
+ 
+ 
 }
