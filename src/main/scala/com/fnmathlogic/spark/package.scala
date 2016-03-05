@@ -25,7 +25,7 @@ import org.apache.spark.sql.functions._
 object analysis {
 
   def main : String = {
-  return "This is Data Science Analysis package but by MathLogic"
+  return "This is Data Science Analysis package contributed by MathLogic"
   }
 
    def df2LabeledPoint (indf: org.apache.spark.sql.DataFrame, targetvar: String ) : org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint] = {
