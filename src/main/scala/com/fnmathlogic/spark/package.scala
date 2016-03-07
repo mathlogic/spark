@@ -29,10 +29,10 @@ object analysis {
   }
 
    def df2LabeledPoint (indf: org.apache.spark.sql.DataFrame, targetvar: String ) : org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint] = {
-var i = -1
+var i = 0
 val x1 = indf.columns.indexOf(targetvar)
 val x2 = indf.rdd.map{row =>  
-LabeledPoint(row.toSeq(x1).toString.toDouble,Vectors.dense(row.toSeq.toArray.filter{ _ => i = i+1; i != x1 }.map({
+LabeledPoint(row.toSeq(x1).toString.toDouble,Vectors.dense(row.toSeq.toArray.filter{ _ => i = i+1; i != x1 }.drop(1).map({
     case s: String => s.toDouble
     case l: Long => l.toDouble
     case d: Double => d
